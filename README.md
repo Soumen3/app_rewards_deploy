@@ -126,3 +126,47 @@ social_rewards/
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
+
+
+
+
+<h1 style="color:#0b5cb2">Deployment</h2>
+
+## Deployment
+
+The backend of the application is deployed on PythonAnywhere, and the frontend is deployed on Vercel.
+
+### Backend Deployment on PythonAnywhere
+
+1. Sign up or log in to [PythonAnywhere](https://www.pythonanywhere.com/).
+2. Create a new web app and choose Django as the framework.
+3. Clone the repository into your PythonAnywhere account:
+    ```bash
+    git clone https://github.com/Soumen3/app_rewards_deploy.git
+    cd app_rewards_deploy
+    ```
+4. Create a virtual environment and install the required packages:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    ```
+5. Configure the web app to use the virtual environment and set the working directory to the project folder.
+6. Apply the migrations and create a superuser:
+    ```bash
+    python manage.py migrate
+    python manage.py createsuperuser
+    ```
+7. Update the `settings.py` file to configure the CORS configarations and allowed hosts.
+8. change the wsgi and env settings of web
+9. Reload the web app on PythonAnywhere.
+
+### Frontend Deployment on Vercel
+
+1. Sign up or log in to [Vercel](https://vercel.com/).
+2. Import the frontend project from your GitHub repository.
+3. Configure the build settings:
+    - Build Command: `npm run build`
+    - Output Directory: `build`
+4. Deploy the project.
+5. Vercel will provide a URL where your frontend is hosted.
